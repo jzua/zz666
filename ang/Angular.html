@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+			color: #333;
+		}
+		.red {
+				    color:white;
+				    background-color:red;
+				    padding:20px;
+				    font-family:"Courier New";
+				}
+				.ccc {
+				    background-color:#ccc;
+				    padding:40px;
+				    font-family:Verdana;
+				}
+				h5{
+					border-top:1px solid #ccc;
+				}
+		</style>
+	</head>
+	<body ng-app="">
+		<h5>ng-click</h5>
+		<p>点击按钮:</p>
+		<button ng-click="count = count + 1" ng-init="count=0">OK</button>
+		<p>按钮被点击了 {{count}} 次。</p>
+		<h5>ng-class</h5>
+		<select ng-model="home">
+		    <option value="red">红色</option>
+		    <option value="ccc">灰色</option>
+		</select>
+		<div ng-class="home">
+		    <h1>Hello</h1>
+		</div>
+		<h5>
+			ng-if 指令用于在表达式为 false 时移除 HTML 元素。
+		</h5>
+		保留 HTML: <input type="checkbox" ng-model="myVar" ng-init="myVar = true">
+			<div ng-if="myVar">
+			<h1>Hello</h1>
+			</div>​
+			<p>当复选框取消选中时 DIV 元素将移除。</p>
+			<p>当重新选中复选框，DIV 元素会重新显示。</p>
+			<h5>ng-hide 指令在表达式为 true 时隐藏 HTML 元素。</h5>
+	隐藏 HTML: <input type="checkbox" ng-model="myVar">
+				<div ng-hide="myVar">
+				<h1>俎泽</h1>
+				</div>
+			<h5>ng-show 指令在表达式为 true 时显示指定的 HTML 元素，否则隐藏指定的 HTML 元素。</h5>
+			显示 HTML: <input type="checkbox" ng-model="myVar">
+						<div ng-show="myVar">
+						<h1>俎泽</h1>
+						</div>
+			<h5>ng-repeat 指令会重复一个 HTML 元素：</h5>
+			<!--
+ 			ng-repeat 指令会重复一个 HTML 元素：
+ 			-->
+ 			<div ng-app="" ng-init="names=['123','456','789']">
+		  	<p>使用 ng-repeat 来循环数组</p>
+		    <ul>
+		    <li ng-repeat="x in names">
+		     	 {{ x }}
+		    </li>
+		  </ul>
+		</div>
+					
+					
+		<h5>
+			ng-app 指令初始化一个程序。
+			ng-init 指令初始化应用程序数据。
+			ng-model 指令把元素值（比如输入域的值）绑定到应用程序。
+		</h5>
+		<div ng-app="" ng-init="firstName='爼泽'">     
+		     <p>姓名：<input type="text" ng-model="firstName"></p>
+		     <p>你叫： {{ firstName }}</p>
+		     <h5>ng-bind 指令告诉 AngularJS 使用给定的变量或表达式的值来替换 HTML 元素的内容。
+				如果给定的变量或表达式修改了，指定替换的 HTML 元素也会修改。</h5>
+		     <p ng-bind="firstName"></p>
+ 		</div>
+		<script type="text/javascript" src="js/angular.js"></script>
+	</body>
+</html>
